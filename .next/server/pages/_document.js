@@ -100,112 +100,64 @@ module.exports = require("styled-jsx/server");
 
 /***/ }),
 
-/***/ 7:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("VDXt");
-
-
-/***/ }),
-
-/***/ "AXZJ":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-exports.__esModule=true;exports.htmlEscapeJsonString=htmlEscapeJsonString;// This utility is based on https://github.com/zertosh/htmlescape
-// License: https://github.com/zertosh/htmlescape/blob/0527ca7156a524d256101bb310a9f970f63078ad/LICENSE
-const ESCAPE_LOOKUP={'&':'\\u0026','>':'\\u003e','<':'\\u003c','\u2028':'\\u2028','\u2029':'\\u2029'};const ESCAPE_REGEX=/[&><\u2028\u2029]/g;function htmlEscapeJsonString(str){return str.replace(ESCAPE_REGEX,match=>ESCAPE_LOOKUP[match]);}
-//# sourceMappingURL=htmlescape.js.map
-
-/***/ }),
-
-/***/ "UJjI":
-/***/ (function(module, exports) {
-
-module.exports = require("next/dist/next-server/lib/constants.js");
-
-/***/ }),
-
-/***/ "VDXt":
+/***/ "4D8t":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 exports.__esModule = true;
 exports.Html = Html;
 exports.Main = Main;
 exports.NextScript = exports.Head = exports.default = void 0;
-
 var _propTypes = _interopRequireDefault(__webpack_require__("rf6O"));
-
 var _react = _interopRequireWildcard(__webpack_require__("cDcd"));
-
 var _server = _interopRequireDefault(__webpack_require__("2+G7"));
-
 var _constants = __webpack_require__("UJjI");
-
 var _documentContext = __webpack_require__("nMq/");
-
 var _utils = __webpack_require__("kYf9");
-
 exports.DocumentContext = _utils.DocumentContext;
 exports.DocumentInitialProps = _utils.DocumentInitialProps;
 exports.DocumentProps = _utils.DocumentProps;
-
 var _getPageFiles = __webpack_require__("vHio");
-
 var _utils2 = __webpack_require__("ri/Y");
-
-var _htmlescape = __webpack_require__("AXZJ");
-
+var _htmlescape = __webpack_require__("fl2h");
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
     default: obj
   };
 }
-
 function _getRequireWildcardCache() {
   if (typeof WeakMap !== "function") return null;
   var cache = new WeakMap();
-
   _getRequireWildcardCache = function () {
     return cache;
   };
-
   return cache;
 }
-
 function _interopRequireWildcard(obj) {
   if (obj && obj.__esModule) {
     return obj;
   }
-
   if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
     return {
       default: obj
     };
   }
-
   var cache = _getRequireWildcardCache();
-
   if (cache && cache.has(obj)) {
     return cache.get(obj);
   }
-
   var newObj = {};
   var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
   for (var key in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, key)) {
       var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
       if (desc && (desc.get || desc.set)) {
         Object.defineProperty(newObj, key, desc);
       } else {
@@ -213,35 +165,26 @@ function _interopRequireWildcard(obj) {
       }
     }
   }
-
   newObj.default = obj;
-
   if (cache) {
     cache.set(obj, newObj);
   }
-
   return newObj;
 }
-
 function dedupe(bundles) {
   const files = new Set();
   const kept = [];
-
   for (const bundle of bundles) {
     if (files.has(bundle.file)) continue;
     files.add(bundle.file);
     kept.push(bundle);
   }
-
   return kept;
 }
-
 function getOptionalModernScriptVariant(path) {
   if (false) {}
-
   return path;
 }
-
 function getDocumentFiles(buildManifest, pathname) {
   const sharedFiles = (0, _getPageFiles.getPageFiles)(buildManifest, '/_app');
   const pageFiles = pathname !== '/_error' ? (0, _getPageFiles.getPageFiles)(buildManifest, pathname) : [];
@@ -250,13 +193,10 @@ function getDocumentFiles(buildManifest, pathname) {
     pageFiles,
     allFiles: [...new Set([...sharedFiles, ...pageFiles])]
   };
-}
-/**
-* `Document` component handles the initial `document` markup and renders only on the server side.
-* Commonly used for implementing server side rendering for `css-in-js` libraries.
-*/
-
-
+} /**
+  * `Document` component handles the initial `document` markup and renders only on the server side.
+  * Commonly used for implementing server side rendering for `css-in-js` libraries.
+  */
 class Document extends _react.Component {
   /**
   * `getInitialProps` hook returns the context object with the addition of `renderPage`.
@@ -266,7 +206,6 @@ class Document extends _react.Component {
     const enhanceApp = App => {
       return props => /*#__PURE__*/_react.default.createElement(App, props);
     };
-
     const {
       html,
       head
@@ -280,22 +219,17 @@ class Document extends _react.Component {
       styles
     };
   }
-
   static renderDocument(DocumentComponent, props) {
     return /*#__PURE__*/_react.default.createElement(_documentContext.DocumentContext.Provider, {
       value: props
     }, /*#__PURE__*/_react.default.createElement(DocumentComponent, props));
   }
-
   render() {
     return /*#__PURE__*/_react.default.createElement(Html, null, /*#__PURE__*/_react.default.createElement(Head, null), /*#__PURE__*/_react.default.createElement("body", null, /*#__PURE__*/_react.default.createElement(Main, null), /*#__PURE__*/_react.default.createElement(NextScript, null)));
   }
-
 }
-
 exports.default = Document;
 Document.headTagsMiddleware =  false ? undefined : () => [];
-
 function Html(props) {
   const {
     inAmpMode,
@@ -309,13 +243,11 @@ function Html(props) {
     "data-ampdevmode": inAmpMode && false ? '' : undefined
   }));
 }
-
 class Head extends _react.Component {
   constructor(...args) {
     super(...args);
     this.context = void 0;
   }
-
   getCssLinks(files) {
     const {
       assetPrefix,
@@ -325,13 +257,11 @@ class Head extends _react.Component {
     const cssFiles = files.allFiles.filter(f => f.endsWith('.css'));
     const sharedFiles = new Set(files.sharedFiles);
     let dynamicCssFiles = dedupe(dynamicImports.filter(f => f.file.endsWith('.css'))).map(f => f.file);
-
     if (dynamicCssFiles.length) {
       const existing = new Set(cssFiles);
       dynamicCssFiles = dynamicCssFiles.filter(f => !(existing.has(f) || sharedFiles.has(f)));
       cssFiles.push(...dynamicCssFiles);
     }
-
     const cssLinkElements = [];
     cssFiles.forEach(file => {
       const isSharedFile = sharedFiles.has(file);
@@ -354,7 +284,6 @@ class Head extends _react.Component {
     });
     return cssLinkElements.length === 0 ? null : cssLinkElements;
   }
-
   getPreloadDynamicChunks() {
     const {
       dynamicImports,
@@ -368,7 +297,6 @@ class Head extends _react.Component {
       if (!bundle.file.endsWith(getOptionalModernScriptVariant('.js'))) {
         return null;
       }
-
       return /*#__PURE__*/_react.default.createElement("link", {
         rel: "preload",
         key: bundle.file,
@@ -380,7 +308,6 @@ class Head extends _react.Component {
     }) // Filter out nulled scripts
     .filter(Boolean);
   }
-
   getPreloadMainLinks(files) {
     const {
       assetPrefix,
@@ -401,23 +328,19 @@ class Head extends _react.Component {
       crossOrigin: this.props.crossOrigin || undefined
     }));
   }
-
   makeStylesheetInert(node) {
     return _react.default.Children.map(node, c => {
       if (c.type === 'link' && c.props['href'] && _constants.OPTIMIZED_FONT_PROVIDERS.some(url => c.props['href'].startsWith(url))) {
         const newProps = _objectSpread({}, c.props || {});
-
         newProps['data-href'] = newProps['href'];
         newProps['href'] = undefined;
         return /*#__PURE__*/_react.default.cloneElement(c, newProps);
       } else if (c.props && c.props['children']) {
         c.props['children'] = this.makeStylesheetInert(c.props['children']);
       }
-
       return c;
     });
   }
-
   render() {
     const {
       styles,
@@ -436,24 +359,18 @@ class Head extends _react.Component {
       head
     } = this.context;
     let children = this.props.children; // show a warning if Head contains <title> (only in development)
-
     if (false) {}
-
     if (false) {}
-
     let hasAmphtmlRel = false;
     let hasCanonicalRel = false; // show warning and remove conflicting amp head tags
-
     head = _react.default.Children.map(head || [], child => {
       if (!child) return child;
       const {
         type,
         props
       } = child;
-
       if (inAmpMode) {
         let badProp = '';
-
         if (type === 'meta' && props.name === 'viewport') {
           badProp = 'name="viewport"';
         } else if (type === 'link' && props.rel === 'canonical') {
@@ -471,7 +388,6 @@ class Head extends _react.Component {
             badProp += '/>';
           }
         }
-
         if (badProp) {
           console.warn(`Found conflicting amp tag "${child.type}" with conflicting prop ${badProp} in ${__NEXT_DATA__.page}. https://err.sh/next.js/conflicting-amp-tag`);
           return null;
@@ -482,22 +398,18 @@ class Head extends _react.Component {
           hasAmphtmlRel = true;
         }
       }
-
       return child;
     }); // try to parse styles from fragment for backwards compat
-
     const curStyles = Array.isArray(styles) ? styles : [];
-
-    if (inAmpMode && styles && // @ts-ignore Property 'props' does not exist on type ReactElement
-    styles.props && // @ts-ignore Property 'props' does not exist on type ReactElement
+    if (inAmpMode && styles &&
+    // @ts-ignore Property 'props' does not exist on type ReactElement
+    styles.props &&
+    // @ts-ignore Property 'props' does not exist on type ReactElement
     Array.isArray(styles.props.children)) {
       const hasStyles = el => {
         var _el$props, _el$props$dangerously;
-
         return el == null ? void 0 : (_el$props = el.props) == null ? void 0 : (_el$props$dangerously = _el$props.dangerouslySetInnerHTML) == null ? void 0 : _el$props$dangerously.__html;
       }; // @ts-ignore Property 'props' does not exist on type ReactElement
-
-
       styles.props.children.forEach(child => {
         if (Array.isArray(child)) {
           child.forEach(el => hasStyles(el) && curStyles.push(el));
@@ -506,7 +418,6 @@ class Head extends _react.Component {
         }
       });
     }
-
     const files = getDocumentFiles(this.context.buildManifest, this.context.__NEXT_DATA__.page);
     return /*#__PURE__*/_react.default.createElement("head", this.props, this.context.isDevelopment && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("style", {
       "data-next-hide-fouc": true,
@@ -554,25 +465,20 @@ class Head extends _react.Component {
       href: canonicalBase + getAmpPath(ampPath, dangerousAsPath)
     }),  false ? undefined : this.getCssLinks(files), /*#__PURE__*/_react.default.createElement("noscript", {
       "data-n-css": true
-    }), !disableRuntimeJS && this.getPreloadDynamicChunks(), !disableRuntimeJS && this.getPreloadMainLinks(files), this.context.isDevelopment &&
-    /*#__PURE__*/
-    // this element is used to mount development styles so the
+    }), !disableRuntimeJS && this.getPreloadDynamicChunks(), !disableRuntimeJS && this.getPreloadMainLinks(files), this.context.isDevelopment && /*#__PURE__*/ // this element is used to mount development styles so the
     // ordering matches production
     // (by default, style-loader injects at the bottom of <head />)
     _react.default.createElement("noscript", {
       id: "__next_css__DO_NOT_USE__"
     }), styles || null), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, {}, ...(headTags || [])));
   }
-
 }
-
 exports.Head = Head;
 Head.contextType = _documentContext.DocumentContext;
 Head.propTypes = {
   nonce: _propTypes.default.string,
   crossOrigin: _propTypes.default.string
 };
-
 function Main() {
   const {
     inAmpMode,
@@ -588,13 +494,11 @@ function Main() {
     }
   });
 }
-
 class NextScript extends _react.Component {
   constructor(...args) {
     super(...args);
     this.context = void 0;
   }
-
   getDynamicChunks(files) {
     const {
       dynamicImports,
@@ -604,9 +508,7 @@ class NextScript extends _react.Component {
     } = this.context;
     return dedupe(dynamicImports).map(bundle => {
       let modernProps = {};
-
       if (false) {}
-
       if (!bundle.file.endsWith('.js') || files.allFiles.includes(bundle.file)) return null;
       return /*#__PURE__*/_react.default.createElement("script", Object.assign({
         async: !isDevelopment,
@@ -617,10 +519,8 @@ class NextScript extends _react.Component {
       }, modernProps));
     });
   }
-
   getScripts(files) {
     var _buildManifest$lowPri;
-
     const {
       assetPrefix,
       buildManifest,
@@ -631,9 +531,7 @@ class NextScript extends _react.Component {
     const lowPriorityScripts = (_buildManifest$lowPri = buildManifest.lowPriorityFiles) == null ? void 0 : _buildManifest$lowPri.filter(file => file.endsWith('.js'));
     return [...normalScripts, ...lowPriorityScripts].map(file => {
       let modernProps = {};
-
       if (false) {}
-
       return /*#__PURE__*/_react.default.createElement("script", Object.assign({
         key: file,
         src: `${assetPrefix}/_next/${encodeURI(file)}${devOnlyCacheBusterQueryString}`,
@@ -643,7 +541,6 @@ class NextScript extends _react.Component {
       }, modernProps));
     });
   }
-
   getPolyfillScripts() {
     // polyfills.js has to be rendered as nomodule without async
     // It also has to be the first script to load
@@ -660,12 +557,10 @@ class NextScript extends _react.Component {
       src: `${assetPrefix}/_next/${polyfill}${devOnlyCacheBusterQueryString}`
     }));
   }
-
   static getInlineScriptSource(documentProps) {
     const {
       __NEXT_DATA__
     } = documentProps;
-
     try {
       const data = JSON.stringify(__NEXT_DATA__);
       return (0, _htmlescape.htmlEscapeJsonString)(data);
@@ -673,11 +568,9 @@ class NextScript extends _react.Component {
       if (err.message.indexOf('circular structure')) {
         throw new Error(`Circular structure in "getInitialProps" result of page "${__NEXT_DATA__.page}". https://err.sh/vercel/next.js/circular-structure`);
       }
-
       throw err;
     }
   }
-
   render() {
     const {
       assetPrefix,
@@ -689,12 +582,10 @@ class NextScript extends _react.Component {
     } = this.context;
     const disableRuntimeJS = unstable_runtimeJS === false;
     docComponentsRendered.NextScript = true;
-
     if (inAmpMode) {
       if (true) {
         return null;
       }
-
       const ampDevFiles = [...buildManifest.devFiles, ...buildManifest.ampDevFiles];
       return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, disableRuntimeJS ? null : /*#__PURE__*/_react.default.createElement("script", {
         id: "__NEXT_DATA__",
@@ -713,9 +604,7 @@ class NextScript extends _react.Component {
         "data-ampdevmode": true
       })));
     }
-
     if (false) {}
-
     const files = getDocumentFiles(this.context.buildManifest, this.context.__NEXT_DATA__.page);
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !disableRuntimeJS && buildManifest.devFiles ? buildManifest.devFiles.map(file => /*#__PURE__*/_react.default.createElement("script", {
       key: file,
@@ -732,9 +621,7 @@ class NextScript extends _react.Component {
       }
     }),  false ? /*#__PURE__*/undefined : null, !disableRuntimeJS && this.getPolyfillScripts(), disableRuntimeJS ? null : this.getDynamicChunks(files), disableRuntimeJS ? null : this.getScripts(files));
   }
-
 }
-
 exports.NextScript = NextScript;
 NextScript.contextType = _documentContext.DocumentContext;
 NextScript.propTypes = {
@@ -742,10 +629,24 @@ NextScript.propTypes = {
   crossOrigin: _propTypes.default.string
 };
 NextScript.safariNomoduleFix = '!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()},!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();';
-
 function getAmpPath(ampPath, asPath) {
   return ampPath || `${asPath}${asPath.includes('?') ? '&' : '?'}amp=1`;
 }
+
+/***/ }),
+
+/***/ 7:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("4D8t");
+
+
+/***/ }),
+
+/***/ "UJjI":
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/constants.js");
 
 /***/ }),
 
@@ -753,6 +654,17 @@ function getAmpPath(ampPath, asPath) {
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "fl2h":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+exports.__esModule=true;exports.htmlEscapeJsonString=htmlEscapeJsonString;// This utility is based on https://github.com/zertosh/htmlescape
+// License: https://github.com/zertosh/htmlescape/blob/0527ca7156a524d256101bb310a9f970f63078ad/LICENSE
+const ESCAPE_LOOKUP={'&':'\\u0026','>':'\\u003e','<':'\\u003c','\u2028':'\\u2028','\u2029':'\\u2029'};const ESCAPE_REGEX=/[&><\u2028\u2029]/g;function htmlEscapeJsonString(str){return str.replace(ESCAPE_REGEX,match=>ESCAPE_LOOKUP[match]);}
+//# sourceMappingURL=htmlescape.js.map
 
 /***/ }),
 

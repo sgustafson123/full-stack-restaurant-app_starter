@@ -93,28 +93,58 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "/a9y":
+/***/ 6:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("iQU9");
+
+
+/***/ }),
+
+/***/ "UlpK":
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/lib/head.js");
+
+/***/ }),
+
+/***/ "Y3ZS":
+/***/ (function(module, exports) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault;
+
+/***/ }),
+
+/***/ "cDcd":
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "iQU9":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__("TqRt");
-
+var _interopRequireDefault = __webpack_require__("Y3ZS");
 exports.__esModule = true;
 exports.default = void 0;
-
 var _react = _interopRequireDefault(__webpack_require__("cDcd"));
-
 var _head = _interopRequireDefault(__webpack_require__("UlpK"));
-
 const statusCodes = {
   400: 'Bad Request',
   404: 'This page could not be found',
   405: 'Method Not Allowed',
   500: 'Internal Server Error'
 };
-
 function _getInitialProps({
   res,
   err
@@ -123,12 +153,9 @@ function _getInitialProps({
   return {
     statusCode
   };
-}
-/**
-* `Error` component used for handling errors.
-*/
-
-
+} /**
+  * `Error` component used for handling errors.
+  */
 class Error extends _react.default.Component {
   render() {
     const {
@@ -149,9 +176,7 @@ class Error extends _react.default.Component {
       style: styles.h2
     }, title, "."))));
   }
-
 }
-
 exports.default = Error;
 Error.displayName = 'ErrorPage';
 Error.getInitialProps = _getInitialProps;
@@ -193,41 +218,6 @@ const styles = {
     padding: 0
   }
 };
-
-/***/ }),
-
-/***/ 6:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("/a9y");
-
-
-/***/ }),
-
-/***/ "TqRt":
-/***/ (function(module, exports) {
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
-
-module.exports = _interopRequireDefault;
-
-/***/ }),
-
-/***/ "UlpK":
-/***/ (function(module, exports) {
-
-module.exports = require("next/dist/next-server/lib/head.js");
-
-/***/ }),
-
-/***/ "cDcd":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
 
 /***/ })
 

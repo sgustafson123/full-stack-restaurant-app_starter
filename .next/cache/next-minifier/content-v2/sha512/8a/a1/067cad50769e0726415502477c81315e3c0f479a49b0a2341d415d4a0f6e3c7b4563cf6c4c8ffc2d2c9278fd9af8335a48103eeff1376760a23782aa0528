@@ -1,0 +1,1 @@
+{"code":"_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[13],{\"2XUy\":function(n,o,t){(window.__NEXT_P=window.__NEXT_P||[]).push([\"/test\",function(){return t(\"FCuQ\")}])},FCuQ:function(n,o,t){\"use strict\";t.r(o);var u=t(\"jg1C\");o.default=function(){return Object(u.jsx)(\"h1\",{children:\"Hello World\"})}}},[[\"2XUy\",0,1]]]);","extractedComments":[]}
